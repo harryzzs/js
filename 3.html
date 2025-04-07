@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <title>Age Calculator</title>
+    <script>
+        function calculateAge(birthYear, currentYear) {
+            const age = currentYear - birthYear;
+            return `You are ${age} years old`;
+        }
+
+        function displayAge() {
+            const birthYear = document.getElementById('birthYear').value;
+            const currentYear = document.getElementById('currentYear').value;
+            const ageMessage = calculateAge(parseInt(birthYear), parseInt(currentYear));
+            document.getElementById('ageResult').innerText = ageMessage;
+        }
+    </script>
+</head>
+<body>
+    <h1>Age Calculator</h1>
+    
+    <label for="birthYear">Enter your birth year: </label>
+    <input type="number" id="birthYear" placeholder="Birth Year"><br><br>
+
+    <label for="currentYear">Enter the current year: </label>
+    <input type="number" id="currentYear" placeholder="Current Year"><br><br>
+
+    <button onclick="displayAge()">Calculate Age</button>
+    
+    <p id="ageResult"></p>
+</body>
+</html>
