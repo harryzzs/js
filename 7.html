@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Objects, Sets, and Maps</title>
+</head>
+<body>
+  <h1>Check the Console for Output</h1>
+
+  <script>
+  
+    const person1 = {
+      name: "Alice",
+      age: 28,
+      gender: "Female",
+      occupation: "Engineer"
+    };
+
+    const person2 = {
+      name: "Bob",
+      age: 35,
+      gender: "Male",
+      occupation: "Designer"
+    };
+
+    console.log("Person 1:", person1);
+    console.log("Person 2:", person2);
+
+  
+
+      function createUniqueSet(arr) {
+      return new Set(arr);
+    }
+
+    const numberArray = [1, 2, 3, 2, 4, 1, 5];
+    const uniqueSet = createUniqueSet(numberArray);
+    console.log("Unique Set:", uniqueSet);
+
+ function union(setA, setB) {
+      return new Set([...setA, ...setB]);
+    }
+
+    function intersection(setA, setB) {
+      return new Set([...setA].filter(x => setB.has(x)));
+    }
+
+    function difference(setA, setB) {
+      return new Set([...setA].filter(x => !setB.has(x)));
+    }
+
+    const setA = new Set([1, 2, 3]);
+    const setB = new Set([3, 4, 5]);
+
+    console.log("Union:", union(setA, setB));
+    console.log("Intersection:", intersection(setA, setB));
+    console.log("Difference (A - B):", difference(setA, setB));
+
+  function isSubset(subset, set) {
+      for (let elem of subset) {
+        if (!set.has(elem)) return false;
+      }
+      return true;
+    }
+
+    const subset = new Set([1, 2]);
+    const fullSet = new Set([1, 2, 3, 4]);
+
+    console.log("Is subset:", isSubset(subset, fullSet));
+
+  const myMap = new Map();
+
+    myMap.set("name", "Charlie");
+    myMap.set("age", 30);
+    myMap.set("city", "New York");
+
+ console.log("Name from map:", myMap.get("name"));
+
+  myMap.set("age", 31);
+    console.log("Updated age:", myMap.get("age"));
+
+  myMap.delete("city");
+
+  console.log("Current Map:", myMap);
+  </script>
+</body>
+</html>
