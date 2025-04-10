@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Operations</title>
+</head>
+<body>
+  <h1>Open the Console to See the Output</h1>
+
+  <script>
+    
+    let numbers = [10, 5, 8, 3, 12, 6];
+
+    console.log("Length of array:", numbers.length);
+
+    numbers.push(7);
+
+    numbers.shift();
+
+    numbers.sort((a, b) => a - b);
+
+    numbers.reverse();
+
+    if (numbers.includes(8)) {
+      console.log("Number 8 exists");
+    } else {
+      console.log("Number 8 doesn't exist");
+    }
+
+    let index = numbers.indexOf(12);
+    console.log("Index of number 12:", index);
+
+    let doubledNumbers = numbers.map(num => num * 2);
+
+    console.log("Doubled Numbers:", doubledNumbers);
+  </script>
+</body>
+</html>
