@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Names Array Operations</title>
+</head>
+<body>
+  <h1>Check the Console for Names Array Output</h1>
+
+  <script>
+    let names = ["John", "Jane", "Doe", "Alice", "Bob"];
+
+   console.log("Names in the array:");
+    names.forEach(name => console.log(name));
+
+   names.push("Eve");
+
+   let indexToRemove = names.indexOf("Doe");
+    if (indexToRemove !== -1) {
+      names.splice(indexToRemove, 1);
+    }
+
+      names.sort();
+
+   if (names.includes("Alice")) {
+      console.log("Alice is present");
+    } else {
+      console.log("Alice is not present");
+    }
+
+   let uppercaseNames = names.map(name => name.toUpperCase());
+
+   console.log("Uppercase Names:", uppercaseNames);
+  </script>
+</body>
+</html>
