@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analyze String</title>
+  <script>
+    function AnalyzeString(inputString) {
+      const lowerCaseStr = inputString.toLowerCase();
+      const upperCaseStr = inputString.toUpperCase();
+
+      const containsJavaScript = /javascript/i.test(inputString);
+
+      const aCount = (inputString.match(/a/gi) || []).length;
+
+      return {
+        length: inputString.length,
+        lowercase: lowerCaseStr,
+        uppercase: upperCaseStr,
+        containsJavaScript: containsJavaScript,
+        aCount: aCount
+      };
+    }
+
+    // Optional: Function to display results in the browser
+    function handleAnalyze() {
+      const input = document.getElementById('inputString').value;
+      const result = AnalyzeString(input);
+
+      document.getElementById('output').innerHTML = `
+        <p><strong>Length:</strong> ${result.length}</p>
+        <p><strong>Lowercase:</strong> ${result.lowercase}</p>
+        <p><strong>Uppercase:</strong> ${result.uppercase}</p>
+        <p><strong>Contains "JavaScript":</strong> ${result.containsJavaScript}</p>
+        <p><strong>Count of 'a':</strong> ${result.aCount}</p>
+      `;
+    }
+  </script>
+</head>
+<body>
+  <h1>String Analyzer</h1>
+  <input type="text" id="inputString" placeholder="Enter a string">
+  <button onclick="handleAnalyze()">Analyze</button>
+  <div id="output" style="margin-top: 20px;"></div>
+</body>
+</html>
