@@ -1,0 +1,44 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date & Regex Example</title>
+</head>
+<body>
+    <h2>Date and Regex Validation</h2>
+    <input type="text" id="dateInput" placeholder="Enter date (YYYY-MM-DD)">
+    <button onclick="validateDate()">Check Date</button>
+    <div id="output"></div>
+    <script>
+        function validateDate() {
+            
+            const input = document.getElementById("dateInput").value;
+
+            
+            const regex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
+
+            
+            if (regex.test(input)) {
+                const date = new Date(input);
+                if (isNaN(date.getTime())) {
+                    document.getElementById("output").innerText = "Invalid date.";
+                } else {
+                    document.getElementById("output").innerText = "Valid date format.";
+                }
+            } else {
+                document.getElementById("output").innerText = "Invalid date format. Use YYYY-MM-DD.";
+            }
+
+            
+            const currentDate = new Date();
+            console.log("Current Date:", currentDate.toDateString());
+        }
+    </script>
+</body>
+</html>
+
+
